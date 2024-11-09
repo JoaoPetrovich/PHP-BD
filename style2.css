@@ -1,0 +1,113 @@
+:root {
+    --corFundoDoHeader: #091540;
+    --corFonteDoHeader: #DCDCDC;
+    --corHoverLinkDoHeader: #ABD2FA;
+
+    --corFundoDoMain: #F5F5F5;
+    --corFonteDoMain: #000000;
+    --corBordaDoCard: #7692FF;
+    --corHoverDoCard: #DCDCDC;
+    --corFonteDoCard: #3D518C;
+    --corFundoBotaoDoCard: #1B2CC1;
+    --corFonteDoBotaoDoCard: #F5F5F5;
+    --corInputText: #ccc;
+
+    --corFundoDoFooter: #3D518C;
+    --corFonteDoFooter: #DCDCDC;
+    --corHoverLinkDoFooter: #808080;
+
+    --fontFamily: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    font-family: var(--fontFamily);
+    background-color: var(--corFundoDoMain);
+    color: var(--corFonteDoMain);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.listagem {
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: var(--corFonteDoBotaoDoCard);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--corBordaDoCard);
+    text-align: center;
+    overflow-x: auto;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--corFonteDoCard);
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--corFundoBotaoDoCard);
+    color: var(--corFonteDoBotaoDoCard);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--corFundoDoHeader);
+}
+
+a {
+    text-decoration: none;
+}
+
+a button {
+    margin-right: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: auto;
+    margin-bottom: 15px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--corBordaDoCard);
+    white-space: nowrap;
+}
+
+th {
+    background-color: var(--corFundoDoHeader);
+    color: var(--corFonteDoHeader);
+}
+
+tbody tr:hover {
+    background-color: var(--corHoverDoCard);
+}
+
+tbody td:last-child {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
