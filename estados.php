@@ -15,27 +15,28 @@
 </head>
 
 <body>
-    <?php require("header.php"); ?>
-    <main>
-        <section class="listagem">
-            <h1>Estados</h1>
-            <a href="estado.php?idEstado=0">
-                <button>
-                    NOVO
-                </button>
-            </a>
+    <div class="container">
+        <?php require("header.php"); ?>
+        <main>
+            <section class="listagem">
+                <h1>Estados</h1>
+                <a href="estado.php?idEstado=0">
+                    <button>
+                        NOVO
+                    </button>
+                </a>
 
-            <table>
-                <thead class="tabelaHeader">
-                    <tr>
-                        <th>#</th>
-                        <th>Sigla</th>
-                        <th>Nome</th>
-                        <th>Cidades</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="itens">
+                <table>
+                    <thead class="tabelaHeader">
+                        <tr>
+                            <th>#</th>
+                            <th>Sigla</th>
+                            <th>Nome</th>
+                            <th>Cidades</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="itens">
                         <?php
                         require("ClasseEstado.php");
                         $objetoEstado = new ClasseEstado();
@@ -60,13 +61,14 @@
                         <?php
                         }
                         ?>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
 
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <?php require("footer.php"); ?>
+        <?php require("footer.php"); ?>
+    </div>
 </body>
 
 </html>

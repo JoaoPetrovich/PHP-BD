@@ -15,57 +15,59 @@
 </head>
 
 <body>
-    <?php require("header.php"); ?>
-    <main>
-        <section class="listagem">
-            <h1>Cidades</h1>
-            <a href="cidade.php?idCidade=0">
-                <button>
-                    NOVO
-                </button>
-            </a>
+    <div class="container">
+        <?php require("header.php"); ?>
+        <main>
+            <section class="listagem">
+                <h1>Cidades</h1>
+                <a href="cidade.php?idCidade=0">
+                    <button>
+                        NOVO
+                    </button>
+                </a>
 
-            <table>
-                <thead class="tabelaHeader">
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>UF</th>
-                        <th>Clientes</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="itens">
-                    <?php
-                    require("ClasseCidade.php");
-                    $objetoCidade = new ClasseCidade();
-                    $listagem = $objetoCidade->listarCidades();
-                    foreach ($listagem as $linha) {
-                        $idCidade = $linha["idCidade"];
-                        $nome = $linha["nomeCidade"];
-                        $sigla = $linha["siglaEstado"];
-                        $clientes = $linha["clientesCidade"];
-                    ?>
+                <table>
+                    <thead class="tabelaHeader">
                         <tr>
-                            <td><?php echo $idCidade; ?></td>
-                            <td><?php echo $nome; ?></td>
-                            <td><?php echo $sigla; ?></td>
-                            <td><?php echo $clientes; ?></td>
-                            <td>
-                                <a href="cidade.php?idCidade=<?php echo $idCidade; ?>"><button>ALTERAR</button></a>
-                                <a href="excluircidade.php?idCidade=<?php echo $idCidade; ?>"><button>EXCLUIR</button></a>
-                            </td>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>UF</th>
+                            <th>Clientes</th>
+                            <th></th>
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="itens">
+                        <?php
+                        require("ClasseCidade.php");
+                        $objetoCidade = new ClasseCidade();
+                        $listagem = $objetoCidade->listarCidades();
+                        foreach ($listagem as $linha) {
+                            $idCidade = $linha["idCidade"];
+                            $nome = $linha["nomeCidade"];
+                            $sigla = $linha["siglaEstado"];
+                            $clientes = $linha["clientesCidade"];
+                        ?>
+                            <tr>
+                                <td><?php echo $idCidade; ?></td>
+                                <td><?php echo $nome; ?></td>
+                                <td><?php echo $sigla; ?></td>
+                                <td><?php echo $clientes; ?></td>
+                                <td>
+                                    <a href="cidade.php?idCidade=<?php echo $idCidade; ?>"><button>ALTERAR</button></a>
+                                    <a href="excluircidade.php?idCidade=<?php echo $idCidade; ?>"><button>EXCLUIR</button></a>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
 
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <?php require("footer.php"); ?>
+        <?php require("footer.php"); ?>
+    </div>
 </body>
 
 </html>

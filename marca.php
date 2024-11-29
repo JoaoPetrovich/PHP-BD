@@ -28,26 +28,24 @@ if ($idMarca != 0) {
 </head>
 
 <body>
+    <?php require("header.php"); ?>
+    <main>
+        <section class="formulario">
+            <h1>Marca</h1>
+            <form action="salvarmarca.php" class="formulario-form" method="post">
+                <input type="hidden" id="campoIdMarca" name="campoIdMarca" placeholder="Id da Marca" value="<?php echo $idMarca; ?>">
 
+                <label for="campoNome">Nome da Marca:</label>
+                <input type="text" id="campoNome" name="campoNome" maxlength="50" placeholder="Nome da Marca"
+                    oninput="validarNome(event)" value="<?php echo $nome; ?>" required>
+
+                <input type="submit" value="Salvar" id="botaoSalvar" name="botaoSalvar">
+
+            </form>
+        </section>
+    </main>
+    <?php require("footer.php"); ?>
 </body>
-<?php require("header.php"); ?>
-<main>
-    <section class="formulario">
-        <h1>Marca</h1>
-        <form action="salvarmarca.php" class="formulario-form" method="post">
-            <input type="hidden" id="campoIdMarca" name="campoIdMarca" placeholder="Id da Marca" value="<?php echo $idMarca; ?>">
-
-            <label for="campoNome">Nome da Marca:</label>
-            <input type="text" id="campoNome" name="campoNome" maxlength="50" placeholder="Nome da Marca"
-                oninput="validarNome(event)" value="<?php echo $nome; ?>" required>
-
-            <input type="submit" value="Salvar" id="botaoSalvar" name="botaoSalvar">
-
-        </form>
-    </section>
-</main>
-<?php require("footer.php"); ?>
-
 </html>
 <script>
     // Função para validar o campoNome

@@ -14,69 +14,63 @@
 </head>
 
 <body>
-    <?php require("header.php"); ?>
-    <main>
-        <section class="cards">
-            <section class="card">
-                <img src="./img/interfaceamigavel.jpg" alt="">
-                <h3>Interface amigável</h3>
-                <p>Design intuitivo, fácil navegação para todos os usuários.</p>
-                <section class="botao-card">
-                    <button>Saiba mais</button>
-                </section>
-            </section>
+    <div class="container">
+        <?php require("header.php"); ?>
+        <main>
+            <div class="card-conteudo3">
+                <div class="card01">
+                    <h2 class="card-title" id="card1-title">Título do card 1</h2>
+                    <button class="card-button">
+                        <div class="loader"></div>
+                    </button>
+                </div>
+                <div class="card04">
+                    <div class="cards">
+                        <div class="texto-div">
+                            <h3>Interface amigável</h3>
+                            <p>Design intuitivo, fácil navegação para todos os usuários.</p>
+                        </div>
+                        <div class="img-div">
+                            <a href="#"><img src="./img/img.png" alt=""></a>
+                        </div>
+                    </div>
 
-            <section class="card">
-                <img src="./img/interfaceamigavel.jpg" alt="">
-                <h3>Segurança avançada</h3>
-                <p>Proteção total para dados de clientes e transações.</p>
-                <section class="botao-card">
-                    <button>Saiba mais</button>
-                </section>
-            </section>
+                    <div class="cards">
+                        <div class="texto-div">
+                            <h3>Segurança avançada</h3>
+                            <p>Proteção total para dados de clientes e transações.</p>
+                        </div>
+                        <div class="img-div">
+                            <a href="#"><img src="./img/img.png" alt=""></a>
+                        </div>
+                    </div>
 
-            <section class="card">
-                <img src="./img/interfaceamigavel.jpg" alt="">
-                <h3>Suporte 24/7</h3>
-                <p>Atendimento ao cliente disponível a qualquer hora.</p>
-                <section class="botao-card">
-                    <button>Saiba mais</button>
-                </section>
-            </section>
-            
-            <section class="card">
-                <img src="./img/interfaceamigavel.jpg" alt="">
-                <h3>Variedade de produtos</h3>
-                <p>Ofereça e encontre uma vasta gama de itens.</p>
-                <section class="botao-card">
-                    <button>Saiba mais</button>
-                </section>
-            </section>
+                    <div class="cards">
+                        <div class="texto-div">
+                            <h3>Suporte 24/7</h3>
+                            <p>Atendimento ao cliente disponível a qualquer hora.</p>
+                        </div>
+                        <div class="img-div">
+                            <a href="#"><img src="./img/img.png" alt=""></a>
+                        </div>
+                    </div>
 
-            <section class="card">
-                <img src="./img/interfaceamigavel.jpg" alt="">
-                <h3>Entrega rápida</h3>
-                <p>Serviço de entrega ágil para sua conveniência</p>
-                <section class="botao-card">
-                    <button>Saiba mais</button>
-                </section>
-            </section>
+                    <div class="cards">
+                        <div class="texto-div">
+                            <h3>Variedade de produtos</h3>
+                            <p>Ofereça e encontre uma vasta gama de itens.</p>
+                        </div>
+                        <div class="img-div">
+                            <a href="#"><img src="./img/img.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-            <section class="card">
-                <img src="./img/interfaceamigavel.jpg" alt="">
-                <h3>Ofertas exclusivas</h3>
-                <p>Descontos e promoções especiais para clientes fiéis.</p>
-                <section class="botao-card">
-                    <button>Saiba mais</button>
-                </section>
-            </section>
-        </section>
-
-
-
-    </main>
-
-    <?php require("footer.php"); ?>
+        <?php require("footer.php"); ?>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
     --corFundoDoHeader: #091540;
     --corFonteDoHeader: #DCDCDC;
@@ -17,6 +19,14 @@
     --corFonteDoFooter: #DCDCDC;
     --corHoverLinkDoFooter: #808080;
 
+    --cinza-claro: #dfdddd;
+    --cinza-medio: #757575;
+    --cinza-escuro: #333333;
+    --cinza-escuro2: #262626;
+    --cinza-escuro3: #1A1A1A;
+    --amarelo-vibrante: #fbbc05;
+    --borda-cinza: #dfdddd7c;
+
 
     --fontFamily: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -26,20 +36,56 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--fontFamily);
+    font-family: 'Roboto', sans-serif;
+}
+
+html,
+body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--corFonteDoMain);
+    color: var(--cinza-claro);
+    overflow-y: auto;
+    flex-direction:column;
+    margin: 0;
+}
+
+.container {
+    max-width: 1400px;
+    max-height: 1500px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background-color: var(--corFundoDoHeader);
-    color: var(--corFonteDoHeader);
-    height: 15dvh;
-    display: flex;
-    flex-direction: row;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    gap: 10px;
-    border-bottom: 3px solid var(--corFonteDoHeader);
+    display: flex;
+    margin-top: 10px;
 }
+
+header .cabecalho {
+    background-color: var(--cinza-escuro3);
+    color: var(--corFonteDoHeader);
+    border-radius: 8px;
+    border: 1px solid var(--borda-cinza);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1250px;
+    padding: 16px 50px;
+}
+
 
 .logo {
     display: flex;
@@ -48,55 +94,85 @@ header {
     justify-content: space-between;
     gap: 10px;
     color: var(--corFonteDoHeader);
+    width: 100px;
+    height: auto;
 }
 
 .logo i {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .logo p {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .navegacao nav a {
     text-decoration: none;
     color: var(--corFonteDoHeader);
     padding: 5px 3px 5px 3px;
-    border-bottom: 2px solid transparent;
-    border-top: 2px solid transparent;
     transition: all 1s ease;
 }
 
 .navegacao nav a:hover {
-    border-bottom: 1px solid var(--corFonteDoFooter);
-    border-top: 1px solid var(--corFonteDoFooter);
-    color: var(--corHoverLinkDoHeader);
-    font-size: 12px;
-    padding: 8px 8px 8px 8px;
+    color: var(--amarelo-vibrante);
 }
 
-
-.login button {
-    width: 100px;
-    height: 40px;
-    font-size: 18px;
-    background-color: var(--corFundoDoHeader);
-    color: var(--corFonteDoHeader);
-    border: 2px solid var(--corFonteDoHeader);
-    transition: all 1s ease;
-    border-radius: 5px;
-    transition: all 1s ease;
-
+.btn {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
 }
 
-.login button:hover {
-    background-color: var(--corFonteDoHeader);
-    color: var(--corFundoDoHeader);
-    border: 2px solid transparent;
+.btn button {
+    max-height: 51px;
+    border: none;
+    color: var(--cinza-claro);
+    font-size: 1em;
+    border-radius: 10px;
+    background-color: var(--cinza-escuro2);
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s ease-in-out;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.btn01 {
+    background-color: var(--cinza-escuro2);
+}
+
+.btn02 {
+    background-color: var(--cinza-escuro3);
+}
+
+.btn button:hover {
+    color: var(--amarelo-vibrante);
+}
+
+.btn svg {
+    width: 24px;
+    height: 24px;
+    transition: stroke 0.3s;
+}
+
+.btn button:hover svg {
+    stroke: var(--amarelo-vibrante);
+}
+
 
 footer {
-    background-color: var(--corFundoDoFooter);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+footer .cabecalho {
+    width: 1250px;
+    background-color: var(--cinza-escuro3);
     color: var(--corFonteDoFooter);
     display: flex;
     flex-direction: row;
@@ -104,7 +180,8 @@ footer {
     justify-content: space-around;
     padding-top: 20px;
     padding-bottom: 20px;
-
+    border-radius: 8px;
+    border: 1px solid var(--borda-cinza);
 }
 
 #sobre nav,
@@ -115,7 +192,6 @@ footer {
     align-items: first baseline;
     justify-content: space-between;
     height: auto;
-    /* Garantir que a altura seja ajustável */
     gap: 5px;
 }
 
@@ -135,7 +211,7 @@ footer {
     align-items: first baseline;
     justify-content: space-between;
     gap: 10px;
-    color: var(--corFonteDoFooter);
+    color: var(--cinza-claro);
     font-size: 14px;
     text-decoration: none;
     margin-bottom: 2px solid transparent;
@@ -144,107 +220,174 @@ footer {
 #sobre nav a:hover,
 #paravoce nav a:hover,
 #redessociais nav a:hover {
-    color: var(--corHoverLinkDoFooter);
+    color: var(--amarelo-vibrante);
 }
 
 main {
-    background-color: var(--corFundoDoMain);
-    padding-top: 30px;
-    padding-bottom: 30px;
+    background-color: transparent;
+    max-width: 1250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.card-conteudo3 {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid var(--borda-cinza);
+    overflow: hidden;
+    background-color: var(--cinza-escuro3);
+}
+
+.card-conteudo3:hover {
+    border: 1px solid var(--amarelo-vibrante);
+
+}
+
+.card01 {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid var(--borda-cinza);
+    padding: 24px;
+    max-width: 100%;
+    max-height: 76px;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    background-color: var(--cinza-escuro3);
+    transition: border 0.3s, color 0.3s;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.loader {
+    border: 6px solid var(--corFonteDoHeader);
+    border-top: 6px solid var(--cinza-escuro2);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card-button {
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cinza-escuro2);
+    color: var(--corFonteDoHeader);
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.card-button:hover {
+    transform: scale(1.1);
+}
+
+.card04 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--cinza-escuro3);
+    overflow-x: auto;
 }
 
 .cards {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.card {
+    flex: 1;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: var(--cinza-escuro);
+    border-radius: 8px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
-    gap: 10px;
-    width: 28vh;
-    height: 350px;
-    border: 2px solid var(--corBordaDoCard);
-    box-shadow: 2px 2px 5px var(--corBordaDoCard);
-    padding: 10px 5px 10px 5px;
-    border-radius: 10px;
-    transition: all 1s ease;
-    color: var(--corFonteDoCard);
-}
-
-.card:hover {
-    background-color: var(--corHoverDoCard);
-}
-
-.card img {
-    width: 100%;
-    opacity: 0.8;
-    transition: all 1s ease;
-}
-
-.card img:hover {
-    opacity: 1;
-}
-
-.card h3 {
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.card p {
-    font-size: 12px;
-}
-
-.botao-card {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.texto-div {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    text-align: center;
+    background-color: var(--cinza-escuro);
+}
+
+.texto-div h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--cinza-claro);
+}
+
+.texto-div p {
+    font-size: 1rem;
+    color: var(--cinza-claro);
+}
+
+.img-div {
     width: 100%;
-    margin-bottom: 5px;
+    height: 450px;
+    overflow: hidden;
 }
 
-.card button {
-    width: 80%;
-    height: 30px;
-    border: 2px solid var(--corBordaDoCard);
-    border-radius: 3px;
-    box-shadow: 2px 2px 5px var(--corBordaDoCard);
-    background-color: var(--corFundoBotaoDoCard);
-    color: var(--corFonteDoBotaoDoCard);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+a {
+    text-decoration: none;
 }
 
-.card button:hover {
-    background-color: var(--corFonteDoBotaoDoCard);
-    color: var(--corFundoBotaoDoCard);
-    border: 2px solid var(--corFundoBotaoDoCard);
+.img-div a img {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.img-div:hover a img {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .formulario {
-    max-width: 500px;
-    margin: 50px auto;
-    background-color: var(--corFonteDoBotaoDoCard);
+    max-width: 600px;
+    width: 100%;
+    margin: 55px;
+    background-color: var(--cinza-escuro3);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 10px var(--corBordaDoCard);
+    box-shadow: 0 0 10px var(--borda-cinza);
+    
 }
 
 .formulario h1 {
-    color: var(--corFundoBotaoDoCard);
+    color: var(--cinza-claro);
     text-align: center;
 }
 
-input[type="text"] {
-    width: calc(100% - 22px);
+input {
+    width: 100%;
     padding: 10px;
-    border: 1px solid var(--corInputText);
+    border: 1px solid var(--borda-cinza);
     border-radius: 15px;
     box-sizing: border-box;
     margin-bottom: 15px;
@@ -254,15 +397,25 @@ input[type="text"] {
 label {
     display: block;
     font-weight: bold;
-    color: var(--corFonteDoCard);
+    color: var(--cinza-claro);
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borda-cinza);
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-top: 2px;
 }
 
 #botaoSalvar {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
-    background-color: var(--corFundoBotaoDoCard);
-    color: var(--corFonteDoBotaoDoCard);
+    background-color: var(--cinza-escuro2);
+    color: var(--cinza-claro);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -270,6 +423,85 @@ label {
 }
 
 #botaoSalvar:hover {
+    background-color: var(--amarelo-vibrante);
+}
+
+.listagem {
+    width: 100%;
+    margin: 50px auto;
+    background-color: var(--corFonteDoBotaoDoCard);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--corBordaDoCard);
+    text-align: center;
+    overflow-x: auto;
+}
+
+.listagem h1 {
+    font-size: 24px;
+    color: var(--corFonteDoCard);
+    margin-bottom: 20px;
+}
+
+.listagem button {
+    background-color: var(--corFundoBotaoDoCard);
+    color: var(--corFonteDoBotaoDoCard);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.listagem button:hover {
     background-color: var(--corFundoDoHeader);
 }
 
+.listagem a {
+    text-decoration: none;
+}
+
+.listagem a button {
+    margin-right: 5px;
+}
+
+.listagem table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: auto;
+    margin-bottom: 15px;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--corBordaDoCard);
+    white-space: nowrap;
+}
+
+table th {
+    background-color: var(--corFundoDoHeader);
+    color: var(--corFonteDoHeader);
+
+}
+
+tbody tr:hover {
+    background-color: var(--corHoverDoCard);
+}
+
+tbody td:last-child {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}

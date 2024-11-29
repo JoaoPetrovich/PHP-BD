@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
     --corFundoDoHeader: #091540;
     --corFonteDoHeader: #DCDCDC;
@@ -16,15 +18,15 @@
     --corFonteDoFooter: #DCDCDC;
     --corHoverLinkDoFooter: #808080;
 
-    --fontFamily: Verdana, Geneva, Tahoma, sans-serif;
-}
+    --cinza-claro: #dfdddd;
+    --cinza-medio: #757575;
+    --cinza-escuro: #333333;
+    --cinza-escuro2: #262626;
+    --cinza-escuro3: #1A1A1A;
+    --amarelo-vibrante: #fbbc05;
+    --borda-cinza: #dfdddd7c;
 
-body {
-    font-family: var(--fontFamily);
-    background-color: var(--corFundoDoMain);
-    color: var(--corFonteDoMain);
-    margin: 0;
-    padding: 0;
+    --fontFamily: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main {
@@ -33,28 +35,29 @@ main {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    color: var(--cinza-claro);
 }
 
 .listagem {
     max-width: 1200px;
     margin: 50px auto;
-    background-color: var(--corFonteDoBotaoDoCard);
+    background-color: var(--cinza-escuro3);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 10px var(--corBordaDoCard);
+    box-shadow: 0 0 10px var(--borda-cinza);
     text-align: center;
     overflow-x: auto;
 }
 
-h1 {
+.listagem h1 {
     font-size: 24px;
-    color: var(--corFonteDoCard);
+    color: var(--cinza-claro);
     margin-bottom: 20px;
 }
 
-button {
-    background-color: var(--corFundoBotaoDoCard);
-    color: var(--corFonteDoBotaoDoCard);
+.listagem button {
+    background-color: var(--cinza-escuro2);
+    color: var(--cinza-claro);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -62,19 +65,19 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: var(--corFundoDoHeader);
+.listagem button:hover {
+    background-color: var(--amarelo-vibrante);
 }
 
-a {
+.listagem a {
     text-decoration: none;
 }
 
-a button {
+.listagem a button {
     margin-right: 5px;
 }
 
-table {
+.listagem table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
@@ -82,20 +85,22 @@ table {
     margin-bottom: 15px;
 }
 
-th, td {
+table th,
+table td {
     text-align: left;
     padding: 12px 15px;
-    border-bottom: 1px solid var(--corBordaDoCard);
+    border-bottom: 1px solid var(--borda-cinza);
     white-space: nowrap;
 }
 
-th {
-    background-color: var(--corFundoDoHeader);
-    color: var(--corFonteDoHeader);
+table th {
+    background-color: var(--cinza-escuro2);
+    color: var(--cinza-claro);
+
 }
 
 tbody tr:hover {
-    background-color: var(--corHoverDoCard);
+    background-color: var(--cinza-escuro2);
 }
 
 tbody td:last-child {
@@ -107,7 +112,8 @@ tbody td:last-child {
         font-size: 14px;
     }
 
-    th, td {
+    th,
+    td {
         padding: 10px;
     }
 }

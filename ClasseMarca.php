@@ -32,7 +32,7 @@ class ClasseMarca
     public function setProdutos($produtos)
     {
         $this->produtos = $produtos;
-    }   
+    }
 
     public function __construct() {}
 

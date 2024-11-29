@@ -15,53 +15,55 @@
 </head>
 
 <body>
-    <?php require("header.php"); ?>
-    <main>
-        <section class="listagem">
-            <h1>Unidades</h1>
-            <a href="unidade.php?idUnidade=0">
-                <button>
-                    NOVO
-                </button>
-            </a>
+    <div class="container">
+        <?php require("header.php"); ?>
+        <main>
+            <section class="listagem">
+                <h1>Unidades</h1>
+                <a href="unidade.php?idUnidade=0">
+                    <button>
+                        NOVO
+                    </button>
+                </a>
 
-            <table>
-                <thead class="tabelaHeader">
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Produtos</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody class="itens">
-                    <?php
-                    require("ClasseUnidade.php");
-                    $objetoUnidade = new ClasseUnidade();
-                    $listagem = $objetoUnidade->listarUnidades();
-                    foreach ($listagem as $linha) {
-                        $idUnidade = $linha["IDUNIDADE"];
-                        $nome = $linha["NOME"];
-                        $produtos = $linha["PRODUTOS"];
-                    ?>
+                <table>
+                    <thead class="tabelaHeader">
                         <tr>
-                            <td><?php echo $idUnidade; ?></td>
-                            <td><?php echo $nome; ?></td>
-                            <td><?php echo $produtos; ?></td>
-                            <td>
-                                <a href="unidade.php?idUnidade=<?php echo $idUnidade; ?>"><button>ALTERAR</button></a>
-                                <a href="excluirunidade.php?idUnidade=<?php echo $idUnidade; ?>"><button>EXCLUIR</button></a>
-                                <a href="bkpunidade.php?idUnidade=<?php echo $idUnidade; ?>"><button>LOG</button></a>
-                            </td>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Produtos</th>
+                            <th></th>
                         </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </section>
-    </main>
-    <?php require("footer.php"); ?>
+                    </thead>
+                    <tbody class="itens">
+                        <?php
+                        require("ClasseUnidade.php");
+                        $objetoUnidade = new ClasseUnidade();
+                        $listagem = $objetoUnidade->listarUnidades();
+                        foreach ($listagem as $linha) {
+                            $idUnidade = $linha["IDUNIDADE"];
+                            $nome = $linha["NOME"];
+                            $produtos = $linha["PRODUTOS"];
+                        ?>
+                            <tr>
+                                <td><?php echo $idUnidade; ?></td>
+                                <td><?php echo $nome; ?></td>
+                                <td><?php echo $produtos; ?></td>
+                                <td>
+                                    <a href="unidade.php?idUnidade=<?php echo $idUnidade; ?>"><button>ALTERAR</button></a>
+                                    <a href="excluirunidade.php?idUnidade=<?php echo $idUnidade; ?>"><button>EXCLUIR</button></a>
+                                    <a href="bkpunidade.php?idUnidade=<?php echo $idUnidade; ?>"><button>LOG</button></a>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <?php require("footer.php"); ?>
+    </div>
 </body>
 
 </html>
